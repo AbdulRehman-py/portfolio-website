@@ -1,0 +1,201 @@
+@layer base{
+
+:root {
+    /* colors */
+    --black: #000501;
+    --tan: #b6b57b;
+    --green: #31b28a;
+    --lightgreen: #8cdfc5;
+    --red: #ff4404;
+    --white: #ffffff;
+  
+    /* font families */
+    --main: "Lato", sans-serif;
+    --heading: "Josefin Sans", sans-serif;
+    --mono: "Fira mono", monospace;
+  
+    /* type scale */
+    --base-size: 1.2rem;
+    --scale: 1.25;
+    --h1: calc(var(--h2) * var(--scale));
+    --h2: calc(var(--h3) * var(--scale));
+    --h3: calc(var(--h4) * var(--scale));
+    --h4: calc(var(--h5) * var(--scale));
+    --h5: calc(var(--h6) * var(--scale));
+    --h6: var(--base-size);
+    --small: calc(var(--base-size) / var(--scale));
+  }
+  
+  /* border box model: https://css-tricks.com/box-sizing/ */
+  html {
+    box-sizing: border-box;
+  }
+  *,
+  *::before,
+  *::after {
+    box-sizing: inherit;
+  }
+  
+  /* h/t Scott O'Hara https://css-tricks.com/inclusively-hidden/ */
+  .sr-only:not(:focus):not(:active) {
+    clip: rect(0 0 0 0);
+    clip-path: inset(50%);
+    height: 1px;
+    overflow: hidden;
+    position: absolute;
+    white-space: nowrap;
+    width: 1px;
+  }
+  
+  body {
+    font-family: var(--main);
+    line-height: 1.5;
+    font-size: var(--base-size);
+    margin: 0;
+    padding: 0;
+  }
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    font-family: var(--heading);
+    text-transform: uppercase;
+  }
+  h1 {
+    font-size: var(--h1);
+  }
+  h2 {
+    font-size: var(--h2);
+  }
+  h3 {
+    font-size: var(--h3);
+  }
+  h4 {
+    font-size: var(--h4);
+  }
+  h5 {
+    font-size: var(--h5);
+  }
+  h6 {
+    font-size: var(--h6);
+  }
+  .mono {
+    font-family: var(--mono);
+  }
+  
+  .colors {
+    display: flex;
+    /* you could do this with grid as well, but you may need a few more lines of code */
+  }
+  .colors > * {
+    width: 50px;
+    height: 50px;
+    margin-right: 20px;
+    border: 1px solid black;
+  }
+  .white {
+    background-color: var(--white);
+  }
+  .black {
+    background-color: var(--black);
+  }
+  .tan {
+    background-color: var(--tan);
+  }
+  .green {
+    background-color: var(--green);
+  }
+  .lightgreen {
+    background-color: var(--lightgreen);
+  }
+  .red {
+    background-color: var(--red);
+  }
+  a {
+    color: var(--green);
+  }
+  a:hover {
+    text-decoration: none;
+  }
+  img {
+    max-width: 100%;
+  }
+  figure {
+    margin: 0;
+    padding: 0;
+  }
+}
+  
+  /* intro section */
+
+ @layer intro {
+
+.intro-section-div {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 1rem;
+
+ }
+
+
+
+  #intro-section {
+    padding: 4rem 0;
+    background-image: url("https://assets.codepen.io/296057/fem-comet.jpg");
+    background-repeat: no-repeat;
+    background-position: 86% 20%;
+    color: var(--white);
+    
+  }
+
+  #intro-section a {
+    color: var(--white);
+  }
+
+  .name {
+    font-weight: 700;
+
+  }
+}
+
+
+@layer contact {
+
+
+  .contact-button {
+    border: none;
+    outline: none;
+    border-radius: 12px;
+    background-color: var(--green);
+    padding: 1rem 2rem;
+    text-transform: uppercase;
+    font-size: var(--h6);
+    font-weight: 550;
+    font-family: var(--heading);
+  }
+  #contact-me-section{
+    color: var(--white);
+    background-image: url(https://assets.codepen.io/296057/fem-aurora.jpg);
+    background-position: 75% 40%;
+    text-align: center;
+    padding: 6rem 0;
+
+    
+  }
+
+  #contact-me-section a {
+    color: var(--black);
+    text-decoration: none;
+  }
+
+  #contact-me-section p {
+    
+    margin: 3rem 0 2rem 0;
+  }
+
+  .contact-button:hover {
+    background-color: var(--tan);
+  }
+}
