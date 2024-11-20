@@ -1,6 +1,7 @@
-@layer base{
+/* copied from our previous work. Do not delete! */
 
-:root {
+@layer base {
+  :root {
     /* colors */
     --black: #000501;
     --tan: #b6b57b;
@@ -8,12 +9,14 @@
     --lightgreen: #8cdfc5;
     --red: #ff4404;
     --white: #ffffff;
-  
+
+
     /* font families */
     --main: "Lato", sans-serif;
     --heading: "Josefin Sans", sans-serif;
     --mono: "Fira mono", monospace;
-  
+    --skill: 'Host Grotesk', sans-serif;
+
     /* type scale */
     --base-size: 1.2rem;
     --scale: 1.25;
@@ -25,17 +28,18 @@
     --h6: var(--base-size);
     --small: calc(var(--base-size) / var(--scale));
   }
-  
+
   /* border box model: https://css-tricks.com/box-sizing/ */
   html {
     box-sizing: border-box;
   }
+
   *,
   *::before,
   *::after {
     box-sizing: inherit;
   }
-  
+
   /* h/t Scott O'Hara https://css-tricks.com/inclusively-hidden/ */
   .sr-only:not(:focus):not(:active) {
     clip: rect(0 0 0 0);
@@ -46,7 +50,7 @@
     white-space: nowrap;
     width: 1px;
   }
-  
+
   body {
     font-family: var(--main);
     line-height: 1.5;
@@ -54,6 +58,7 @@
     margin: 0;
     padding: 0;
   }
+
   h1,
   h2,
   h3,
@@ -63,139 +68,696 @@
     font-family: var(--heading);
     text-transform: uppercase;
   }
+
   h1 {
     font-size: var(--h1);
   }
+
   h2 {
     font-size: var(--h2);
   }
+
   h3 {
     font-size: var(--h3);
   }
+
   h4 {
     font-size: var(--h4);
   }
+
   h5 {
     font-size: var(--h5);
   }
+
   h6 {
     font-size: var(--h6);
   }
+
   .mono {
     font-family: var(--mono);
   }
-  
+
   .colors {
     display: flex;
     /* you could do this with grid as well, but you may need a few more lines of code */
   }
-  .colors > * {
+
+  .colors>* {
     width: 50px;
     height: 50px;
     margin-right: 20px;
     border: 1px solid black;
   }
+
   .white {
     background-color: var(--white);
   }
+
   .black {
     background-color: var(--black);
   }
+
   .tan {
     background-color: var(--tan);
   }
+
   .green {
     background-color: var(--green);
   }
+
   .lightgreen {
     background-color: var(--lightgreen);
   }
+
   .red {
     background-color: var(--red);
   }
+
   a {
     color: var(--green);
   }
+
   a:hover {
     text-decoration: none;
   }
+
   img {
     max-width: 100%;
   }
+
   figure {
     margin: 0;
     padding: 0;
   }
-}
-  
-  /* intro section */
 
- @layer intro {
-
-.intro-section-div {
+  .container {
     max-width: 1200px;
     margin: 0 auto;
     padding: 0 1rem;
+  }
 
- }
+  .button {
+    display: inline-block;
+    background-color: var(--green);
+    color: var(--black);
+    padding: 0.8rem;
+    border-radius: 5px;
+    text-decoration: none;
+    font-family: var(--headline);
+    font-size: var(--small);
+    text-transform: uppercase;
+    font-weight: 600;
+    line-height: 1;
+  }
 
+  .button:hover {
+    background-color: var(--tan);
+  }
+}
 
-
-  #intro-section {
+@layer intro {
+  .intro {
     padding: 4rem 0;
-    background-image: url("https://assets.codepen.io/296057/fem-comet.jpg");
+    background-image: url("../img/fem-comet.jpg");
     background-repeat: no-repeat;
     background-position: 86% 20%;
     color: var(--white);
-    
   }
 
-  #intro-section a {
+  .intro a {
     color: var(--white);
+  }
+
+  .intro h2 {
+    text-transform: uppercase;
   }
 
   .name {
     font-weight: 700;
-
   }
 }
 
+@layer feature {
+  .fea ul {
+    list-style-type: none;
+    padding: 0;
+    display: flex;
+    gap: 2rem;
+    justify-content: center;
+    margin: 0;
+
+
+  }
+
+  .fea ul li {
+    border: 2px solid grey;
+    padding: 0.5rem;
+    text-transform: uppercase;
+    background-color: var(--white);
+  }
+
+  #feature-section {
+    padding: 6rem 2rem 2rem 2rem;
+    background-color: var(--white);
+
+  }
+
+  .fea {
+    padding: 0 2rem 2rem 2rem;
+    border: 1px solid #ccc;
+
+    background-image: url("../img/fem-feature-bkgd.png");
+
+
+
+  }
+
+  .description-container {
+    margin-top: 2rem;
+    background-color: var(--black);
+    color: var(--white);
+
+    border: 1px solid black;
+    border-radius: 5px;
+    outline: none;
+    padding: 0 1.5rem 2rem 1.5rem;
+
+  }
+
+  .grid-overlap {
+    display: grid;
+    grid-template-rows: auto auto;
+  }
+
+  .grid-overlap a img {
+    grid-row: 1/3;
+    grid-column: 1/2;
+  }
+
+  .grid-overlap .ul {
+    grid-column: 1/2;
+    grid-row: 2/3;
+  }
+
+  .fea li {
+    margin-top: 0.5rem;
+  }
+
+  .fea ul {
+    margin-top: -2.75rem;
+  }
+
+  @media (max-width: 650px) {
+    .grid-overlap {
+      grid-template-rows: auto auto;
+    }
+
+    .fea ul li {
+      border: none
+    }
+
+    .fea ul {
+      display: flex;
+      justify-content: center;
+      border: 2px solid grey;
+      outline: none;
+      background-color: var(--white);
+
+    }
+  }
+
+  @media (max-width: 550px) {
+    .fea h2 {
+      font-size: var(--h5);
+    }
+
+    .fea h3 {
+      font-size: var(--h5);
+    }
+
+    .fea ul {
+      flex-flow: row wrap;
+      width: auto;
+      gap: 0;
+    }
+
+    .fea li {
+      font-size: var(--small);
+      padding: 0;
+      margin: 0;
+    }
+
+    .fea {
+      margin: 0;
+      padding: 1rem;
+    }
+
+    .fea h2 {
+      font-size: var(--small);
+    }
+
+    .fea h3 {
+      font-size: var(--small);
+    }
+
+    #feature-section {
+      margin: 0;
+      padding: 0;
+    }
+
+  }
+
+  @media (max-width: 400px) {
+    .fea ul {
+      gap: 0;
+    }
+  }
+}
+
+@layer projects {
+  #section-projects {
+    background-color: var(--black);
+    padding: 6rem 0 4rem 0;
+    color: white;
+  }
+
+  figure img {
+    object-fit: cover;
+    width: 100%;
+    height: 100%;
+  }
+
+  figure {
+    display: grid;
+    grid-template-rows: 1fr 100px;
+  }
+
+  figure a {
+    text-decoration: none;
+    color: var(--white);
+    grid-column: 1/2;
+    grid-row: 1/3;
+  }
+
+  figure a:hover {
+    color: var(--green);
+  }
+
+  figcaption {
+    background-color: var(--black);
+    opacity: 0.8;
+    text-align: center;
+    grid-row: 2/3;
+    grid-column: 1/2;
+  }
+
+  figcaption h3 {
+    margin-bottom: 0;
+  }
+
+  figcaption ul {
+    list-style-type: none;
+    padding: 0;
+    margin: 0 0 2rem 0;
+    font-family: var(--mono);
+    font-size: var(--small);
+    text-transform: uppercase;
+
+  }
+
+  figcaption li {
+    display: inline-block;
+  }
+
+  .top {
+    display: grid;
+    grid-template-columns: 2fr 1fr;
+    gap: 2rem;
+    padding: 0 1rem 0 1rem;
+
+  }
+
+  .top figure h3 {
+
+    font-size: var(--h5);
+  }
+
+  .top figure:first-child {
+    grid-row: span 2;
+  }
+
+  .bottomgrid {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    gap: 2rem;
+    margin-top: 2rem;
+    padding: 0 1rem 0 1rem;
+  }
+
+  .project-container h2 {
+    padding: 0 1rem;
+  }
+
+
+  @media (max-width: 800px) {
+    .top {
+      display: grid;
+      grid-template-columns: 1fr;
+
+    }
+
+    .top figure {
+      margin-bottom: 4rem;
+    }
+
+    .bottomgrid {
+      display: flex;
+      flex-flow: row wrap;
+      justify-content: center;
+      align-items: center;
+      gap: 6rem 2rem;
+    }
+
+    .bottomgrid>* {
+      flex-basis: 30%;
+    }
+
+    .bottomgrid img {
+      object-fit: cover;
+      width: 100%;
+      height: 100%;
+    }
+
+  }
+
+  @media (max-width: 620px) {
+    .top {
+      display: grid;
+      grid-template-columns: 1fr;
+
+
+    }
+
+    .bottomgrid {
+      display: flex;
+      gap: 3rem 2rem;
+
+    }
+
+    .bottomgrid a {
+      flex-basis: 80%;
+
+    }
+
+    .top figure {
+      margin-bottom: 1rem;
+    }
+
+    .bottomgrid img {
+      margin: 0;
+
+    }
+
+    h2 {
+      font-size: var(--h4);
+    }
+
+
+
+  }
+
+  @media (max-width: 450px) {
+    h2 {
+      font-size: var(--h6)
+    }
+  }
+}
 
 @layer contact {
-
-
-  .contact-button {
-    border: none;
-    outline: none;
-    border-radius: 12px;
-    background-color: var(--green);
-    padding: 1rem 2rem;
-    text-transform: uppercase;
-    font-size: var(--h6);
-    font-weight: 550;
-    font-family: var(--heading);
-  }
-  #contact-me-section{
+  #contact {
+    background: url("../img/fem-aurora.jpg") center center;
+    background-size: cover;
+    background-repeat: no-repeat;
     color: var(--white);
-    background-image: url(https://assets.codepen.io/296057/fem-aurora.jpg);
-    background-position: 75% 40%;
+    padding: 4rem 0;
+    margin: 0;
     text-align: center;
+  }
+
+  .contact-section p:last-child {
+    margin-top: 3rem;
+  }
+}
+
+@layer footer {
+  .footer-container svg {
+    width: 40px;
+  }
+
+  .footer-container ul li {
+    list-style-type: none;
+  }
+
+  .footer-container h2 {
+    padding: 0;
+    margin: 0 0 2rem 0;
+  }
+
+  .footer-container ul {
+    padding: 0;
+    margin: 0;
+    display: flex;
+    justify-content: center;
+    flex-flow: row wrap;
+    gap: 2rem;
+  }
+
+  #footer {
+    background: var(--black) url("../img/fem-stars.jpg") no-repeat center center;
+    background-size: cover;
     padding: 6rem 0;
 
-    
   }
 
-  #contact-me-section a {
-    color: var(--black);
+  .footer-container>* {
+    color: var(--white);
+
+  }
+
+  .footer-container {
+    text-align: center;
+  }
+
+  #footer svg {
+    fill: var(--white);
+    margin-bottom: 2rem;
+  }
+
+  #footer svg:hover {
+    fill: var(--green);
+  }
+}
+
+@layer nav {
+
+  .intro-section-div li a {
+    font-family: var(--heading);
+    font-weight: 700;
+  }
+
+  nav ul {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+  }
+
+  ul a {
     text-decoration: none;
   }
 
-  #contact-me-section p {
-    
-    margin: 3rem 0 2rem 0;
+  nav ul {
+    display: flex;
+    flex-flow: row wrap;
+    gap: 2rem;
   }
 
-  .contact-button:hover {
-    background-color: var(--tan);
+  header {
+    display: flex;
+    justify-content: space-between;
+    flex-flow: row wrap;
+    align-items: baseline;
+    padding: 0;
+    margin-bottom: 6rem;
+  }
+
+  header h1 {
+    font-weight: 300;
+    font-family: var(--heading);
+    font-size: var(--h3);
+    margin: 0;
+
+  }
+
+  h1 a {
+    text-decoration: none;
+    color: var(--white);
+  }
+
+  body {
+    background-color: var(--black);
+  }
+
+  header svg {
+    width: 30px;
+    fill: var(--white);
+    margin-top: -0.1rem;
+  }
+
+  nav ul a {
+    font-family: var(--heading);
+    font-weight: 600;
+    color: var(--white);
+  }
+
+  nav a svg:hover {
+    fill: var(--green);
+  }
+
+  header .button {
+    padding: 0.6rem 0.4rem 0.4rem 0.4rem;
+    color: var(--black);
+  }
+
+  nav a:hover {
+    color: var(--green);
+  }
+
+  header h1 a:hover {
+    color: var(--green);
+  }
+
+  .intro-section-div svg:hover {
+    fill: var(--green);
+  }
+
+  .intro-section-div {
+    padding: 0 2rem 0 2rem;
+    font-family: var(--mono);
+  }
+
+  .intro-section-div h2 {
+    font-family: var(--skill);
+  }
+
+  @media (max-width: 850px) {
+    header {
+      justify-content: center;
+    }
+
+    header h1 {
+      flex-basis: 100%;
+      margin-bottom: 2rem;
+      text-align: center;
+
+    }
+
+  }
+
+  @media (max-width: 640px) {
+    header {
+      justify-content: space-between;
+    }
+
+    header h1 {
+      flex-basis: auto;
+    }
+
+    header button {
+      display: block;
+      font-size: 3rem;
+      line-height: 1;
+      border: 0;
+      background-color: transparent;
+      color: var(--white);
+    }
+
+    header button:hover {
+      color: var(--green);
+    }
+
+    header button::after {
+      content: "\2630";
+    }
+
+    nav {
+      position: fixed;
+      top: 0;
+      right: 200%;
+      width: 100vw;
+      height: 100vh;
+      opacity: 0;
+      background: #fff;
+      padding-top: 20%;
+      transition: right 0s 0.5s, opacity 0.5s;
+    }
+
+    /* trigger for animation - pulls down nav box */
+    button:focus+nav,
+    button:focus-within+nav {
+      right: 0;
+      opacity: 1;
+      transition: 0s, opacity 0.5s;
+
+    }
+
+    nav ul {
+      display: block;
+      text-align: center;
+      position: relative;
+      top: -50hv;
+      transition: top 0.5s;
+    }
+
+    button:focus+nav ul,
+    button:focus-within+nav ul {
+      top: 0;
+
+    }
+
+    nav a:any-link:not(.button) {
+      display: block;
+      padding: 1.5rem;
+      color: var(--green);
+    }
+
+    nav a svg {
+      fill: var(--green);
+    }
+
+    nav a:hover,
+    nav a svg:hover {
+      color: var(--tan);
+      fill: var(--tan);
+    }
+
+    nav .button {
+      margin-top: 1.5rem;
+    }
+
+    nav ul::after {
+      content: "\2716";
+      color: var(--green);
+      display: block;
+      position: absolute;
+      top: 1rem;
+      right: 1rem;
+      font-size: 3rem;
+      line-height: 1;
+
+    }
+
+    .intro-section-div nav {
+      overflow: auto;
+    }
   }
 }
