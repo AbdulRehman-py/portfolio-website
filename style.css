@@ -245,14 +245,7 @@
 
   }
 
-  #feature-section {
-    
-    
-    background-image: revert;
-    
-
-
-  }
+  
 
   .description-container {
     margin-top: 2rem;
@@ -369,7 +362,7 @@
 
   #section-projects {
     background-color: var(--black);
-    padding: 6rem 0 4rem 0;
+    padding: 6rem 2rem 4rem 2rem;
     color: white;
   }
 
@@ -596,6 +589,7 @@
     background: var(--black) url("../img/fem-stars.jpg") no-repeat center center;
     background-size: cover;
     color: var(--white);
+    z-index: 0;
   }
 
   footer ul {
@@ -618,6 +612,25 @@
     fill: var(--green);
   }
 
+  .bottom-trim {
+    background-image: url(../img/fem-featured-bottom.png);
+    background-repeat: repeat-x;
+    background-position: top center;
+    height: 16px;
+    padding-bottom: 4rem;
+  }
+  .footer2 {
+    padding: 0;
+  }
+  #feature-section {
+    background-image: revert;
+    background-image: url(../img/fem-feature-bkgd.png);
+    background-repeat: repeat;
+    background-position: center center;
+  }
+  .container-footer {
+    padding: 6rem 0;
+  }
 }
 
 @layer extra {
