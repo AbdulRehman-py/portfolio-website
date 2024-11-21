@@ -177,10 +177,11 @@
 
 @layer intro {
   .intro {
-    padding: 4rem 0;
-    background-image: url("../img/fem-comet.jpg");
-    background-repeat: no-repeat;
-    background-position: 86% 20%;
+    padding: 4rem 0 10rem 0;
+    background-image: url(fem-featured-top.png),
+    url(../img/fem-comet.jpg);
+    background-repeat: repeat-x, no-repeat;
+    background-position: bottom center, 86% 10%;
     color: var(--white);
   }
 
@@ -194,6 +195,18 @@
 
   .name {
     font-weight: 700;
+  }
+
+  .stars {
+    padding: 4rem 0 6rem 0;
+    background-image: url(fem-featured-top.png),
+    url(../img/fem-stars-sky.jpg);
+    background-repeat: repeat-x, no-repeat;
+    background-position: bottom center, center center;
+  }
+  
+  header + article {
+    max-width: 500px;
   }
 }
 
@@ -217,17 +230,28 @@
   }
 
   #feature-section {
-    padding: 6rem 2rem 2rem 2rem;
+    
     background-color: var(--white);
 
   }
 
-  .fea {
-    padding: 0 2rem 2rem 2rem;
-    border: 1px solid #ccc;
+  #feature-section {
+    
+    background-image: url(../img/fem-feature-bottom.png),
+    url(../img/fem-feature-bkgd.png);
+    background-repeat: repeat-x, repeat;
+    background-position: bottom center,center center;
+    padding: 6rem 2rem 4rem 2rem;
+    
 
-    background-image: url("../img/fem-feature-bkgd.png");
 
+  }
+
+  #feature-section {
+    
+    
+    background-image: revert;
+    
 
 
   }
@@ -267,6 +291,12 @@
     margin-top: -2.75rem;
   }
 
+ 
+
+
+
+
+
   @media (max-width: 650px) {
     .grid-overlap {
       grid-template-rows: auto auto;
@@ -284,6 +314,7 @@
       background-color: var(--white);
 
     }
+    
   }
 
   @media (max-width: 550px) {
@@ -332,6 +363,8 @@
       gap: 0;
     }
   }
+
+
 }
 
 @layer projects {
@@ -493,6 +526,81 @@
   }
 }
 
+@layer extra {
+  .youtube {
+    margin-bottom: 3rem;
+    width: 100%;
+    aspect-ratio: 16/9;
+  }
+
+   figure {
+    display: grid;
+    color: var(--white);
+    
+  }
+  .project .first-fig {
+    color: transparent;
+    background-color: var(--white);
+    text-align: left;
+  }
+.project .screen  {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  grid-template-rows: auto auto auto;
+  margin-bottom: 0;
+  column-gap: 2rem;
+  
+}
+#feature-section .section-featured img {
+  grid-column: revert;
+  grid-row: revert;
+}
+
+.p {
+  background-color: var(--white);
+  display: grid;
+  grid-template-columns: 1fr 0.2fr 1fr;
+  margin: 0;
+  padding: 0;
+}
+
+.p p:first-of-type {
+  grid-column: 1/2;
+  text-align: center;
+}
+.p p:last-of-type {
+  grid-column: 3/4;
+  text-align: left;
+}
+.p {
+  margin-bottom: 5rem;
+}
+.image-bottom {
+  margin-bottom: 6rem;
+}
+
+
+  #flex  {
+  display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: auto;
+    column-gap: 2rem;
+    margin: 0rem 0 6rem 0;
+    text-align: center;
+}
+.img-flex img {
+  grid-column: 2/3;
+}
+.img-flex p {
+  grid-row: 1/2;
+  grid-column: 1/2;
+  width: 100%;
+  color: var(--black);
+  align-self: center;
+}
+
+}
+
 @layer contact {
   #contact {
     background: url("../img/fem-aurora.jpg") center center;
@@ -510,55 +618,88 @@
 }
 
 @layer footer {
-  .footer-container svg {
-    width: 40px;
-  }
-
-  .footer-container ul li {
-    list-style-type: none;
-  }
-
-  .footer-container h2 {
-    padding: 0;
-    margin: 0 0 2rem 0;
-  }
-
-  .footer-container ul {
-    padding: 0;
-    margin: 0;
-    display: flex;
-    justify-content: center;
-    flex-flow: row wrap;
-    gap: 2rem;
-  }
-
-  #footer {
-    background: var(--black) url("../img/fem-stars.jpg") no-repeat center center;
-    background-size: cover;
-    padding: 6rem 0;
-
-  }
-
-  .footer-container>* {
-    color: var(--white);
-
-  }
-
-  .footer-container {
-    text-align: center;
-  }
-
-  #footer svg {
-    fill: var(--white);
-    margin-bottom: 2rem;
-  }
-
-  #footer svg:hover {
+  #footer a:hover svg {
     fill: var(--green);
   }
+ #footer svg {
+   width: 40px;
+   fill: var(--white);
+ }
+ ul li {
+   list-style-type: none;
+ }
+ 
+ h2 {
+   padding: 0;
+   margin: 0 0 2rem 0;
+ }
+ #footer ul {
+   padding: 0;
+   margin: 0;
+   display: flex;
+   justify-content: center;
+    flex-flow: row wrap;
+   gap: 2rem;
+}
+ #footer {
+  background: var(--black) url("https://assets.codepen.io/296057/fem-stars.jpg") no-repeat center center;
+   background-size: cover;
+   padding: 6rem 0;
+   
+ }
+ .footer-container > *  {
+   color: var(--white);
+   
+}
+ .footer-container {
+   text-align: center;
+}
+ .footer svg {
+   fill: var(--white);
+   margin-bottom: 2rem;
+ }
+ #footer svg:hover {
+  fill: var(--green);
+ }
 }
 
+
+@layer footer2 {
+  footer {
+    text-align: center;
+    padding: 6rem 0;
+    background: var(--black) url("../img/fem-stars.jpg") no-repeat center center;
+    background-size: cover;
+    color: var(--white);
+  }
+
+  footer ul {
+    list-style-type: none;
+    padding: 0;
+    margin: 2rem 0;
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: center;
+    gap: 3rem;
+    font-size: 3rem;
+  }
+
+  footer svg {
+    width: 40px;
+    fill: var(--white);
+  }
+
+  footer a:hover svg {
+    fill: var(--green);
+  }
+
+}
+
+
+
 @layer nav {
+
+
 
   .intro-section-div li a {
     font-family: var(--heading);
@@ -619,9 +760,7 @@
     color: var(--white);
   }
 
-  nav a svg:hover {
-    fill: var(--green);
-  }
+ 
 
   header .button {
     padding: 0.6rem 0.4rem 0.4rem 0.4rem;
@@ -632,7 +771,9 @@
     color: var(--green);
   }
 
-  header h1 a:hover {
+  header h1 a:hover,
+  header h1 a:hover svg  {
+   fill: var(--green);
     color: var(--green);
   }
 
@@ -660,7 +801,7 @@
       text-align: center;
 
     }
-
+    
   }
 
   @media (max-width: 640px) {
@@ -679,15 +820,18 @@
       border: 0;
       background-color: transparent;
       color: var(--white);
+
     }
 
     header button:hover {
       color: var(--green);
     }
+    
 
     header button::after {
       content: "\2630";
     }
+   
 
     nav {
       position: fixed;
@@ -695,6 +839,7 @@
       right: 200%;
       width: 100vw;
       height: 100vh;
+      
       opacity: 0;
       background: #fff;
       padding-top: 20%;
@@ -708,6 +853,7 @@
       opacity: 1;
       transition: 0s, opacity 0.5s;
 
+
     }
 
     nav ul {
@@ -717,6 +863,7 @@
       top: -50hv;
       transition: top 0.5s;
     }
+   
 
     button:focus+nav ul,
     button:focus-within+nav ul {
@@ -736,13 +883,15 @@
 
     nav a:hover,
     nav a svg:hover {
-      color: var(--tan);
+      color: var(--white);
       fill: var(--tan);
     }
 
     nav .button {
-      margin-top: 1.5rem;
+      margin-top: 1rem;
     }
+
+    
 
     nav ul::after {
       content: "\2716";
@@ -756,8 +905,21 @@
 
     }
 
-    .intro-section-div nav {
-      overflow: auto;
+    
+  }
+
+  @media (max-width: 420px) {
+    header h1 {
+      font-size: var(--h5);
+      
+    }
+    header h1 svg {
+      width: 20px;
+    }
+    header button {
+      font-size: 2rem;
     }
   }
 }
+
+
