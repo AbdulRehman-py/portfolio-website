@@ -622,11 +622,11 @@
   .footer2 {
     padding: 0;
   }
-  #feature-section {
+  .feature-section-class {
     background-image: revert;
     background-image: url(../img/fem-feature-bkgd.png);
-    background-repeat: repeat;
-    background-position: center center;
+    background-repeat:  repeat;
+    background-position:  center center;
   }
   .container-footer {
     padding: 6rem 0;
