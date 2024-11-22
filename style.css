@@ -521,7 +521,7 @@
 
 @layer contact {
   #contact {
-    background: url("../img/fem-aurora.jpg") center center;
+    background: url("../portfolio-website/img/fem-aurora.jpg") center center;
     background-size: cover;
     background-repeat: no-repeat;
     color: var(--white);
@@ -586,7 +586,7 @@
   footer {
     text-align: center;
     padding: 6rem 0;
-    background: var(--black) url("../img/fem-stars.jpg") no-repeat center center;
+    background: var(--black) url("../portfolio-website/img/fem-stars.jpg") no-repeat center center;
     background-size: cover;
     color: var(--white);
     z-index: 0;
@@ -613,7 +613,7 @@
   }
 
   .bottom-trim {
-    background-image: url(../img/fem-featured-bottom.png);
+    background-image: url(../portfolio-website/img/fem-featured-bottom.png);
     background-repeat: repeat-x;
     background-position: top center;
     height: 16px;
@@ -624,7 +624,7 @@
   }
   .feature-section-class {
     background-image: revert;
-    background-image: url(../img/fem-feature-bkgd.png);
+    background-image: url(../portfolio-website/img/fem-feature-bkgd.png);
     background-repeat:  repeat;
     background-position:  center center;
   }
