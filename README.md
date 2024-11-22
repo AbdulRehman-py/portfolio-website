@@ -12,6 +12,7 @@ This is the portfolio website of Abdul Rehman, an aspiring Frontend Developer. T
 - HTML
 - CSS
 - JavaScript
+- svg
 
 ## Installation
 1. Clone the repository:
