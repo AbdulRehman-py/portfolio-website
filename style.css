@@ -200,7 +200,7 @@
   .stars {
     padding: 4rem 0 6rem 0;
     background-image: url(fem-featured-top.png),
-    url(img/fem-stars-sky.jpg);
+    url(../portfolio-website/img/fem-stars-sky.jpg);
     background-repeat: repeat-x, no-repeat;
     background-position: bottom center, center center;
   }
@@ -237,8 +237,8 @@
 
   #feature-section {
     
-    background-image: url(img/fem-feature-bottom.png),
-    url(../img/fem-feature-bkgd.png);
+    background-image: url(../portfolio-website/img/fem-feature-bottom.png),
+    url(../portfolio-website/img/fem-feature-bkgd.png);
     background-repeat: repeat-x, repeat;
     background-position: bottom center,center center;
     padding: 6rem 2rem 2rem 2rem;
