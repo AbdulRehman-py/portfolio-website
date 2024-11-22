@@ -179,7 +179,7 @@
   .intro {
     padding: 4rem 0 10rem 0;
     background-image: url('fem-featured-top.png'),
-    url('img/fem-comet.jpg');
+    url('../portfolio-website/img/fem-aurora.jpg');
     background-repeat: repeat-x, no-repeat;
     background-position: bottom center, 86% 10%;
     color: var(--white);
