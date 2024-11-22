@@ -521,7 +521,7 @@
 
 @layer contact {
   #contact {
-    background: url("../portfolio-website/img/fem-aurora.jpg") center center;
+    background: url(../portfolio-website/img/fem-aurora.jpg) center center;
     background-size: cover;
     background-repeat: no-repeat;
     color: var(--white);
